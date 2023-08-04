@@ -765,7 +765,7 @@ def parse_package_string(data, filename=None, warnings=None):
         })
     if pkg.package_format > 2:
         known.update({
-            'license': ['file'],
+            'license': ['file', 'source-files', 'type'],
         })
     nodes = [n for n in root.childNodes if n.nodeType == n.ELEMENT_NODE]
     unknown_tags = set([n.tagName for n in nodes if n.tagName not in known.keys()])
